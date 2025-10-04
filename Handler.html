@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <p id="demo">welcome User</p>
+        <br>
+        <button onclick="getName()">click me</button>
+        <script>
+            function getName(){
+                fetch("handler.xml")
+                    .then(response => response.text())
+                    .then(str =>{
+                        var parser = new DOMParser();
+                        var xmldoc = parser.parseFromString(str,"text/xml");
+                        document.getElementById("demo").innerHTML=xmldoc.getElementsByTagName("name")[0].textContent;
+                    })
+                    .catch(error => console.log(error));
+            }
+        </script>
+    </body>
+</html>
