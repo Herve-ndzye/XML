@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<breakfast_menu>
+<food>
+<name>Rice</name>
+<price>2$</price>
+<description>This is a special rice prepared with an expert chef</description>
+<calories>400</calories>
+</food>
+<food>
+<name>peanuts</name>
+<price>5$</price>
+<description>This are special Rwandan peanuts which are reach in sort of many vitamins</description>
+<calories>300</calories>
+</food>
+</breakfast_menu>
+<!--xmllint First.xml noout -->
