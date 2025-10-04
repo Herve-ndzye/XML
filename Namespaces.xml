@@ -1,9 +1,9 @@
 <?xml version ="1.0" encoding = "UTF-8"?>
-<root xmlns:ex1 = "https:://example.com" xmlns:ex2 = "https:://example2.com">
-<ex1:table>
+<root >
+<ex1:table xmlns:ex1 = "https:://example.com">
 <tr><td>namespaces</td></tr>
 </ex1:table>
-<ex2:table>
+<ex2:table xmlns:ex2 = "https:://example2.com">
 <name>Herve</name>
 </ex2:table>
 </root>
