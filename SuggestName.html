@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Autocomplete</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #718096;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      color: #2d3748;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .suggestions-container {
+      margin-top: 20px;
+      padding: 16px;
+      background: #f7fafc;
+      border-radius: 8px;
+      min-height: 60px;
+    }
+
+    .suggestions-label {
+      font-weight: 500;
+      color: #4a5568;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    #txtHint {
+      color: #667eea;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    #txtHint:empty::before {
+      content: "Start typing to see suggestions...";
+      color: #a0aec0;
+      font-weight: normal;
+      font-style: italic;
+    }
+  </style>
+  <script>
+    function showHint(str) {
+      if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+      } else {
+        var xmlhttp = new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Name Suggestions</h1>
+    <p class="subtitle">Start typing a name in the input field below</p>
+    
+    <form>
+      <div class="form-group">
+        <label for="nameInput">First name</label>
+        <input 
+          type="text" 
+          id="nameInput" 
+          onkeyup="showHint(this.value)"
+          placeholder="Type a name..."
+        >
+      </div>
+    </form>
+    
+    <div class="suggestions-container">
+      <div class="suggestions-label">Suggestions:</div>
+      <span id="txtHint"></span>
+    </div>
+  </div>
+</body>
+</html>
