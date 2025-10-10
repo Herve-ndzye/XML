@@ -43,5 +43,5 @@ foreach($a as $name){
         }
     }
 }
-echo $hint === ""? "No Suggestions":$hint;
+echo $hint === ""? "No Suggestions available":$hint;
 ?>
