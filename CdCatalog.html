@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function loadDoc(file){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET",file,false);
+            xhttp.send();
+            return xhttp.responseXML;
+        }
+        function displaying(){
+            var xml = loadDoc("CdCatalog.xml");
+            var xsl = loadDoc("CdCatalog.xsl");
+            var xsltProcessor = new XSLTProcessor();
+            xsltProcessor.importStylesheet(xsl);
+            var resDoc = xsltProcessor.transformToFragment(xml, document);
+            document. getElementById("demo").appendChild(resDoc);
+        }
+    </script>
+    </head>
+    <body onload="displaying()" >
+        <div id = "demo"></div>
+    </body>
+</html>
