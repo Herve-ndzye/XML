@@ -1,4 +1,12 @@
 <?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE breakfast_menu [
+<!DOCTYPE note(food+)>
+<!ELEMENT food(name,price,description,calories)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT calories (#PCDATA)>
+]>
 <?xml-stylesheet type="text/xsl" href="Menu.xsl"?>
 <breakfast_menu>
 <food>

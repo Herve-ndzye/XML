@@ -1,4 +1,12 @@
 <?xml version ="1.0" encoding = "UTF-8"?>
+<!DOCTYPE root[
+<!ELEMENT root(table1,table2)>
+<!ELEMENT table1(tr)>
+<!ELEMENT tr(td)>
+<!ELEMENT table2(name)>
+<!ELEMENT td (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+]>
 <root >
 <ex1:table xmlns:ex1 = "https:://example.com">
 <tr><td>namespaces</td></tr>

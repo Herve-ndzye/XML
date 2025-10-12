@@ -1,3 +1,7 @@
+<!DOCTYPE message[
+<!ELEMENT message(name)>
+<!ELEMENT name (#PCDATA)>
+]>
 <message>
 <name>Herve Ndizeye</name>
 </message>
