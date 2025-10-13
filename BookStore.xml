@@ -6,6 +6,7 @@
 <!ELEMENT author (#PCDATA)>
 <!ELEMENT year (#PCDATA)>
 <!ELEMENT price (#PCDATA)>
+<!ATTLIST book catetory #CDATA #REQUIRED >
 ]>
 <bookstore>
 

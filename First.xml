@@ -1,12 +1,14 @@
 <?xml version = "1.0" encoding= "UTF-8"?>
 <!DOCTYPE note[
-<!ELEMENT note(to,from,heading,body)>
+<!ELEMENT note(to, from, heading, body)>
 <!ELEMENT to (#PCDATA)>
 <!ELEMENT from (#PCDATA)>
 <!ELEMENT heading (#PCDATA)>
 <!ELEMENT body (#PCDATA)>
 ]>
-<note>
+<note  xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="First.xsd">
 <to>Teddy</to>
 <from>Herve</from>
 <heading>
