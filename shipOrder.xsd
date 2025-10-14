@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:Element name="shiporder" type = "orderInfo"/>
+        <xs:complexType name = "orderInfo">
+            <xs:all>
+                <xs:Element name = "orderperson" type  = "xs:string">
+                <xs:Element name = "shipto" type="shiptoInfo"/>
+                <xs:complexType name="shiptoInfo">
+                    <xs:sequence>
+                    <xs:Element name="name" type="xs:string"/>
+                    <xs:Element name="address" type="xs:string"/>
+                    <xs:Element name="city" type="xs:string"/>
+                    <xs:Element name="country" type = "xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+                <xs:Element name="item" type="itemInfo"/>
+                <xs:complexType name = "itemInfo">
+                    <xs:sequence>
+                        <xs:Element name = "title" type="xs:string"/>
+                        <xs:Element name = "note" type = "xs:string" minOccurs="0"/>
+                        <xs:Element name = "quantity" type = "xs:PositiveInteger">
+                        <xs:Element name = "price" type = "xs:decimal">
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:all>
+            <xs:Attribute name = "orderid" type = "xs:string" use = "required">
+        </xs:complexType>
+</xs:schema>
